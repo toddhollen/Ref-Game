@@ -1,0 +1,77 @@
+body{
+	text-align: center;
+	background: black;
+	color: white;
+	font-size: 15px;
+	font-family: sans-serif;
+}
+
+.container{
+	width: 900px;
+	margin: 10px auto;
+}
+
+.menu{
+	position: relative;
+	left: 336px;
+	top: 0px;
+	font-size: 1.5em;
+}
+
+.menu a{
+	color: white;
+	text-decoration: none;
+	padding-right: 10px;
+}
+
+.menu a:hover{
+	text-decoration: underline;
+	color: #26ae90;
+}
+
+.title{
+	border-bottom: 2px solid #26ae90;
+	margin-top: 0px;
+}
+
+.choices img{
+	height: 300px;
+	margin: 20px auto 0px auto;
+}
+
+.instructions{
+	position: relative;
+	left:39%;
+	color: black;
+	background: white;
+	border: 2px solid black;
+	height: 75px;
+	width: 200px;
+}
+
+.instructions button{
+	width: 100px;
+	background: #26ae90;
+	margin-top: 10px;
+}
+
+.call{
+	width: 40%;
+	margin: 15px auto 0px auto;
+	border: 2px solid white;
+
+}
+
+h1{
+	font-size: 3em;
+	color: #26ae90;
+	}
+
+h3{
+	font-size: 1.2em;
+}
+
+h4{
+	font-size: 2em;
+	color: white;
+}
