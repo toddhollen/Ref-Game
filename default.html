@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Name that Call</title>
+	<link rel="stylesheet" href="assets/stylesheet/reset.css">
+	<link rel="stylesheet" href="assets/stylesheet/main.css">
+	<script src="assets/js/jquery-2.1.1.js"></script>
+	<script src="assets/js/app.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+
+	<!-- Google Analytice -->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55858669-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  
+</head>
+<body>
+
+<header>
+	<a class= "logo" href="http://www.bucketsandbladeshockey.com/"><img src="http://www.bucketsandbladeshockey.com/wp-content/uploads/2014/10/buckets-and-blades.png"></a>
+
+<section class= "menu">
+	<a href="http://www.bucketsandbladeshockey.com/articles/">Articles</a>
+	<a href="http://www.bucketsandbladeshockey.com/category/hockey-101/"> Hockey 101</a>
+	<a href="http://www.bucketsandbladeshockey.com/games/">Games</a>
+	<a href= "http://www.bucketsandbladeshockey.com/category/hockey-for-the-assist/"> Hockey for the  Assist</a>	
+	<a href="http://www.bucketsandbladeshockey.com/my-account/">My Account</a>
+	<a href="http://www.store.bucketsandbladeshockey.com/">Shop</a>
+	<a href="http://www.bucketsandbladeshockey.com/about-us/">About Us</a>
+
+</section>
+
+</header>
+<section class= "container">
+<!-- Intro Screen -->
+
+<section id= 'intro'>
+
+<section class= "title">
+<h1>Name that Call</h1>
+<h3 class="instructions">Match the call with the referee signal.</h3>
+</section>
+
+<button class= "start">Click here to play!</button>
+
+</section>
+
+<!-- After Click - Game Play -->
+<section id= "game">
+
+<section class= "question">
+	<h4>How do you call:</h4>
+	<h4 class= "call">Washout?</h4>
+
+</section>
+
+<section class= "choices">
+<div class= "row1">
+	<a class= "answer1" href="#"><img src="assets/images/refgamequestions/washout.jpg"></a>
+	<a class="answer2" href="#"><img src="assets/images/refgamequestions/icing.jpg"></a>
+	</div>
+
+	<div class= "row2">
+	<a class="answer3" href="#"><img src="assets/images/refgamequestions/misconduct.jpg"></a>
+	<a class="answer4" href="#"><img src="assets/images/refgamequestions/slashing.jpg"></a>
+	</div>
+
+</section>
+
+</section>
+
+<!-- After a question -->
+
+<section id= "answer">
+
+<div class= "correct">
+<h1> Correct!</h1>
+<img class="correct-image" src="assets/images/refgameanswers/charging.jpg">
+
+<button class= "return"> Next Question</button>
+	
+</div>
+
+<div class= "incorrect">
+<h1> Sorry, you got that one wrong.</h1>
+<h2> This was the right answer:</h2>
+<img class="correct-image" src="assets/images/refgameanswers/charging.jpg">
+
+<button class= "return">Next Question</button>
+
+</div>
+
+
+</section>
+
+<!-- After the Game  -->
+
+<section id= "end">
+
+<h1>Congratulations!</h1>
+<h2>You got <span class = "number"> X </span> out of 10 right!</h2>
+<img src="assets/images/fans.jpg">
+
+
+</section>
+
+</section>
+</body>

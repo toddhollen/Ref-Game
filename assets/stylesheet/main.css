@@ -1,77 +1,185 @@
+/*
+
+Styling for all Games Pages
+
+*/
+
 body{
-	text-align: center;
 	background: black;
 	color: white;
-	font-size: 15px;
-	font-family: sans-serif;
+	font-family: 'Oswald', sans-serif;
+ }
+
+.container, header{
+	width: 1052px;
+	margin: 32px auto;
 }
 
 .container{
-	width: 900px;
-	margin: 10px auto;
+	text-align: center;
 }
 
 .menu{
 	position: relative;
-	left: 336px;
-	top: 0px;
-	font-size: 1.5em;
+	display: inline-block;
+	font-size: .9em;
+	line-height: 1.6;
+	vertical-align: 12px;
 }
 
 .menu a{
 	color: white;
 	text-decoration: none;
-	padding-right: 10px;
+	padding-left: 9px;
+	padding-right: 9px;
+	font-size: 14px;
 }
 
 .menu a:hover{
-	text-decoration: underline;
-	color: #26ae90;
+	border-top: 2px solid #00ABD8;
+	}
+
+.sub_banner{
+	text-align: center;
+	background-color: #353535;
+	box-shadow: 0px -3px 0px rgba(0, 0, 0, 0.1) inset;
+	min-height: 10px;
+	padding-top: 14px;
+	padding-right: 5px;
+	padding-bottom: 17px;
+	padding-left: 30px;
+	margin-top: 20px;
 }
-
-.title{
-	border-bottom: 2px solid #26ae90;
-	margin-top: 0px;
-}
-
-.choices img{
-	height: 300px;
-	margin: 20px auto 0px auto;
-}
-
-.instructions{
-	position: relative;
-	left:39%;
-	color: black;
-	background: white;
-	border: 2px solid black;
-	height: 75px;
-	width: 200px;
-}
-
-.instructions button{
-	width: 100px;
-	background: #26ae90;
-	margin-top: 10px;
-}
-
-.call{
-	width: 40%;
-	margin: 15px auto 0px auto;
-	border: 2px solid white;
-
+.sub.banner h2{
+	font-size: 32px;
+	line-height: 1.4;
+	margin-top: 0.2rem;
+margin-bottom: 0.5rem;
 }
 
 h1{
 	font-size: 3em;
-	color: #26ae90;
+	color: white;
 	}
 
+h2{
+	font-size: 2em;
+}
+
 h3{
-	font-size: 1.2em;
+	font-size: 1.4em;
+	color:#00abd8;
 }
 
 h4{
 	font-size: 2em;
+	text-decoration: underline;
 	color: white;
 }
+
+a{
+	color: #00abd8;
+	text-decoration: none;
+}
+
+
+/*
+
+Name that Call Game
+
+*/
+
+.title{
+	margin-top: 40px;
+}
+
+.instructions {
+	margin: 30px;
+}
+
+button{
+	width: 250px;
+	height: 100px;
+	font-size: 1.5em;
+	font-weight: bold;
+	background-color: #00abd8;
+	border-radius: 10px;
+	font-family: 'Oswald', sans-serif;
+}
+
+button:hover{
+	box-shadow: 0px 0px 100px #00abd8;
+	border-radius: 10px;
+}
+
+.choices img{
+	height: 250px;
+	margin: 0px auto 0px auto;
+}
+
+
+.question{
+	margin: 10px;
+	}
+
+
+.call{
+	margin-top: 20px;
+	color: #00abd8;
+	text-decoration: none;
+	font-size: 2.2em;
+	font-weight: bold;
+}
+
+#intro{
+	display: block;
+}
+
+#game{
+	display: none;
+}
+
+#answer{
+	display: none;
+}
+
+.return{
+	display: block;
+	margin: 20px auto;
+}
+
+.correct{
+	display: none;
+	margin: 20px;
+	}
+
+.correct h1, .incorrect h1, .incorrect h2{
+	margin: 20px;
+}
+
+.correct-image{
+	height: 400px;
+}
+
+.incorrect{
+	display: none;
+	margin: 20px;
+}
+
+
+#end{
+	display: none;
+	margin-top: 20px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#end h2{
+	margin-top: 10px;
+}
+
+#end img{
+	margin-top: 20px;
+	height: 250px;
+}
+
