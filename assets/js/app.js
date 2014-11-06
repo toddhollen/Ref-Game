@@ -1,14 +1,13 @@
-$(document).ready(function () {
-
 	//Question Array
-		//Need to finish imputting pictures
-	var currentQuestionNum = 0;
+		
+	currentQuestionNum = 0;
 
-	var questions = [{
+	questions = [{
         question: "Boarding",
         choices: ["assets/images/refgamequestions/boarding.jpg","assets/images/refgamequestions/behind.jpg", "assets/images/refgamequestions/charging.jpg", "assets/images/refgamequestions/cross.jpg"],
         qNum : 0,
         correct : 0,
+        correctImage : ["assets/images/refgameanswers/boarding.jpg"],
         description: ''
         },
         {
@@ -87,22 +86,10 @@ $(document).ready(function () {
         var currentQuestionData = questions[currentQuestionNum];
 	// Intro Screen - Click to Start
 
-	$(".start").click(function(){
-			event.preventDefault();
-			$("#game").show("slow");
-			$("#intro").hide("slow");
-                        showCurrentquestion(currentQuestionData);
-		});
-
-	// Game Play - 
-
-	// Step 1: Load first question into class "call"
-	//Get Content for Question
-
-function showCurrentquestion(currentQuestionData){
-	
+    // Setting functions outside of document ready
+    function showCurrentquestion(currentQuestionData){
+    
         //step 1: Clear Template
-
         $('h4.call').html("");
 
         // Load first 4 pictures into class "choices"
@@ -113,75 +100,60 @@ function showCurrentquestion(currentQuestionData){
 
         //step 2: populate template
 
-	$('h4.call').html(currentQuestionData.question);
+        $('h4.call').html(currentQuestionData.question);
 
-	// Load first 4 pictures into class "choices"
-	$('.answer1 img').attr('src', currentQuestionData.choices[0]);
-	$('.answer2 img').attr('src', currentQuestionData.choices[1]);
-	$('.answer3 img').attr('src', currentQuestionData.choices[2]);
-	$('.answer4 img').attr('src', currentQuestionData.choices[3]);
+        // Load first 4 pictures into class "choices"
+        $('.answer1 img').attr('src', currentQuestionData.choices[0]);
+        $('.answer2 img').attr('src', currentQuestionData.choices[1]);
+        $('.answer3 img').attr('src', currentQuestionData.choices[2]);
+        $('.answer4 img').attr('src', currentQuestionData.choices[3]);
 
+    }
+
+$(document).ready(function() {
+    
+    $(".start").click(function(){
+        event.preventDefault();
+        $("#game").show("slow");
+        $("#intro").hide("slow");
+        showCurrentquestion(currentQuestionData); 
+    });
+
+    $(".return").click(function(){
+        event.preventDefault();
+        $("#game").show("slow");
+        $("#answer").hide("slow");
+        showCurrentquestion(currentQuestionData);
+    });
+	
+    $('.choices a').on('click', function(event){
+        //stops us from going to outgoing link
+        event.preventDefault();
+        var currentItem;
+         if(event.target.nodeName == 'A'){
+            currentItem = event.target;
+            } else if(event.target.nodeName == 'IMG'){
+            currentItem = $(event.target).parent();
+            } 
+
+        //Get the index number of clicked answer
+        var index = $(".choices a").index(currentItem);
+        var currentQuestionData = questions[currentQuestionNum];
+
+        var correct = currentQuestionData.correct;
+        var correctImage = currentQuestionData.correctImage;
+
+        if (index == correct) {
+            $("#answer, .correct").show("slow");
+            $(".correct-image").attr('src', currentQuestionData.correctImage);
+            $("#game").hide("slow");  
+            currentQuestionNum++;
+        } else {
+            $("#answer, .incorrect").show("slow");
+            $(".correct-image").attr('src', currentQuestionData.correctImage);
+            $("#game").hide("slow"); 
+            currentQuestionNum++;
         }
+    });
 
-        function checkCurrentAnswer(event, currentQuestionNum, currentQuestionData){
-                 //stops us from going to outgoing link
-                event.preventDefault();
-
-               //Get the index number of clicked answer
-
-                var index = $(".choices a").index(event.target);
-
-               // index = the number of the picture that was clicked
-                //compare that to the "correct" number in the qustion array
-                 // If the index number = the "correct" number, than show .correct screen.
-
-                if (index == correct) {
-                      $("#answer .correct").show("slow");
-                      $("#game").hide("slow");  
-                      currentQuestionNum++;
-                }
-
-         //Else, if the index number != the "correct" number, show the .incorrect screen.
-
-                else{
-                      $("#answer .incorrect").show("slow");
-                      $("#game").hide("slow"); 
-                      currentQuestionNum++;
-                };
-
-        };
-
-	// Return to question screen 
-
-	$(".return").click(function(){
-			event.preventDefault();
-			$("#game").show("slow");
-			$("#answer").hide("slow");
-                        showCurrentquestion(currentQuestionData);
-		});
-
-        //Repeat Step 1 and 2 with new call and pictures 
-
-        //After 10 questions
-
-        // Display #End screen
-
-        //Total number correct = class "Number"
-
-        //Share on Twitter and Facebook
-
-
-        $(document).on('click', '.choices a', checkCurrentAnswer(event, currentQuestionData, currentQuestionNum));
-                /* Act on the event */
-
-
-	// Non-Game buttons to scroll through screnes.
-
-	// $(".choices").click(function(){
-	// 		event.preventDefault();
-	// 		$("#answer").show("slow");
-	// 		$(".correct").show("slow");
-	// 		$("#game").hide("slow");
-	// 	});
-	});
-        
+});
