@@ -144,13 +144,20 @@ $(document).ready(function() {
         $(".correct, .incorrect").hide();
         $(".correct-image").attr('src', '');
 
+    
+
         // Get Data to display
         var cqd = getCurrentQuestionData(questions, currentQuestionNum);
 
-        //Display Data
-        showCurrentquestion(cqd);
-                
-    });
+        // Display Data
+        if (currentQuestionNum > questions.length){ 
+            //    show end of game screen
+            $("#answer, .correct, .incorrect, #game").hide("slow");
+            $("#end").show("slow");
+        } else {
+            showCurrentquestion(cqd);
+        }
+});
 	
     $('.choices a').on('click', function(event){
         //stops us from going to outgoing link
@@ -168,7 +175,6 @@ $(document).ready(function() {
 
         var correct = cqd.correct;
         var correctImage = cqd.correctImage;
-         if (index <= questions.length){
             if (index == correct) {
                 $("#answer, .correct").show("slow");
                 $(".correct-image").attr('src', cqd.correctImage);
@@ -180,11 +186,6 @@ $(document).ready(function() {
                 $("#game").hide("slow"); 
                 ++currentQuestionNum;
             }
-        }else {
-                //Show end of the game
-                $("#answer, .correct, .incorrect, #game").hide("slow");
-                $("#end").show("slow");  
-
-        }
     });
+
 });
